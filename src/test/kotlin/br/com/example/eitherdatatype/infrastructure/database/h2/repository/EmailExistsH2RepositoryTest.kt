@@ -13,7 +13,6 @@ internal class EmailExistsH2RepositoryTest {
 
     @AfterEach
     fun setDown() {
-        println("---------------")
         databaseConnection.close()
 
     }
