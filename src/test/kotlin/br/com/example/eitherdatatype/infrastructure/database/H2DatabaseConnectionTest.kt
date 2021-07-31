@@ -22,8 +22,7 @@ internal class H2DatabaseConnectionTest {
         val sut = H2DatabaseConnection("#%", "", "")
         val response = sut.connection()
         assertTrue(response.isFailure)
-        assertEquals(response.exceptionOrNull()!!::class, SQLException::class)
+        assertTrue(response.exceptionOrNull() is SQLException)
     }
-
 
 }
