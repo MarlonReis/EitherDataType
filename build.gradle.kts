@@ -29,9 +29,9 @@ dependencies {
 
     testImplementation("com.h2database:h2:1.3.148")
     testImplementation("com.ninja-squad:springmockk:3.0.1")
-//    testImplementation("io.mockk:mockk")
+    testImplementation("org.hamcrest:hamcrest-all:1.3")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
-//    testImplementation("org.jetbrains.kotlin:kotlin-test")
+    testImplementation("org.jetbrains.kotlin:kotlin-test")
 }
 
 tasks.withType<KotlinCompile> {

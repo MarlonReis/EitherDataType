@@ -1,5 +1,5 @@
 package br.com.example.eitherdatatype.presentation.protocol
 
-interface Controller {
-    fun handle(request: HttpRequest): HttpResponse
+interface Controller<T> {
+    fun handle(request: HttpRequest<T>): HttpResponse
 }
