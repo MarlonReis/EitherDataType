@@ -25,9 +25,11 @@ dependencies {
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
+    implementation("com.google.code.gson:gson:2.8.7")
 
 
-    testImplementation("com.h2database:h2:1.3.148")
+    implementation("com.h2database:h2:1.3.148")
+
     testImplementation("com.ninja-squad:springmockk:3.0.1")
     testImplementation("org.hamcrest:hamcrest-all:1.3")
     testImplementation("org.springframework.boot:spring-boot-starter-test")

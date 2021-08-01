@@ -6,14 +6,11 @@ import br.com.example.eitherdatatype.inputboundary.CreateAccountInputBoundary
 import br.com.example.eitherdatatype.presentation.protocol.HttpRequest
 import br.com.example.eitherdatatype.shared.Either
 import io.mockk.*
-import org.assertj.core.api.Assertions
-import org.hamcrest.Matcher
 import org.hamcrest.MatcherAssert.assertThat
 import org.hamcrest.Matchers.`is`
 import org.hamcrest.Matchers.hasProperty
+import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
-
-import org.junit.jupiter.api.Assertions.*
 
 internal class CreateAccountControllerTest {
 

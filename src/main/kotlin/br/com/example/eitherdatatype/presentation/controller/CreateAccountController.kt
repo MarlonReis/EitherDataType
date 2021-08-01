@@ -1,5 +1,6 @@
 package br.com.example.eitherdatatype.presentation.controller
 
+import br.com.example.eitherdatatype.data.exceptions.EmailIsBeingUsedException
 import br.com.example.eitherdatatype.domain.usecase.CreateAccountUseCase
 import br.com.example.eitherdatatype.inputboundary.CreateAccountInputBoundary
 import br.com.example.eitherdatatype.outputboundary.MessageError
@@ -25,6 +26,11 @@ class CreateAccountController(private val usecase: CreateAccountUseCase) : Contr
             return HttpResponse(status = 200)
         }
 
-        return HttpResponse(400, response.exceptionOrNull())
+        if (response.exceptionOrNull() is EmailIsBeingUsedException) {
+            val ex = response.exceptionOrNull()!!
+            return HttpResponse(422, MessageError.build(ex.message!!, "email", request.body.email))
+        }
+
+        return HttpResponse(500, response.exceptionOrNull())
     }
 }
