@@ -4,7 +4,6 @@ import br.com.example.eitherdatatype.data.repository.CreateAccountRepository
 import br.com.example.eitherdatatype.domain.entity.UserAccount
 import br.com.example.eitherdatatype.infrastructure.database.ConnectionDatabase
 import br.com.example.eitherdatatype.infrastructure.database.exception.CannotCreateAccountException
-import br.com.example.eitherdatatype.inputboundary.CreateAccountInputBoundary
 import br.com.example.eitherdatatype.shared.Either
 import java.sql.Connection
 

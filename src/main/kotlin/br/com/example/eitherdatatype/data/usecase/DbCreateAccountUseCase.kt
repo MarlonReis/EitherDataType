@@ -5,7 +5,7 @@ import br.com.example.eitherdatatype.data.repository.CreateAccountRepository
 import br.com.example.eitherdatatype.data.repository.EmailExistsRepository
 import br.com.example.eitherdatatype.domain.entity.UserAccount
 import br.com.example.eitherdatatype.domain.usecase.CreateAccountUseCase
-import br.com.example.eitherdatatype.inputboundary.CreateAccountInputBoundary
+import br.com.example.eitherdatatype.inputdata.CreateAccountInputData
 import br.com.example.eitherdatatype.shared.Either
 
 
@@ -14,7 +14,7 @@ class DbCreateAccountUseCase(
     private val emailExistsRepository: EmailExistsRepository
 ) : CreateAccountUseCase {
 
-    override fun createAccount(accountIb: CreateAccountInputBoundary): Either<Unit> {
+    override fun createAccount(accountIb: CreateAccountInputData): Either<Unit> {
         val emailExist = emailExistsRepository.exist(accountIb.email)
         if (emailExist.isFailure) {
             return Either.failure(emailExist.exceptionOrNull()!!)

@@ -1,4 +1,4 @@
-package br.com.example.eitherdatatype.outputboundary
+package br.com.example.eitherdatatype.outputdata
 
 class MessageError private constructor(
     val message: String,

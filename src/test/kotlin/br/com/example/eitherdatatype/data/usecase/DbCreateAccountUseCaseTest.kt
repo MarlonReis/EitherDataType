@@ -4,7 +4,7 @@ import br.com.example.eitherdatatype.data.exceptions.EmailIsBeingUsedException
 import br.com.example.eitherdatatype.data.repository.CreateAccountRepository
 import br.com.example.eitherdatatype.data.repository.EmailExistsRepository
 import br.com.example.eitherdatatype.domain.entity.UserAccount
-import br.com.example.eitherdatatype.inputboundary.CreateAccountInputBoundary
+import br.com.example.eitherdatatype.inputdata.CreateAccountInputData
 import br.com.example.eitherdatatype.shared.Either
 import io.mockk.every
 import io.mockk.mockk
@@ -15,7 +15,7 @@ import org.junit.jupiter.api.Test
 internal class DbCreateAccountUseCaseTest {
     private var createAccount: CreateAccountRepository = CreateAccountRepositoryStub()
     private val emailExists: EmailExistsRepository = EmailExistsRepositoryStub()
-    private val createAccountDataParams = CreateAccountInputBoundary(
+    private val createAccountDataParams = CreateAccountInputData(
         name = "Any Name",
         email = "valid@email.com"
     )

@@ -2,8 +2,6 @@ package br.com.example.eitherdatatype.infrastructure.database.h2.repository
 
 import br.com.example.eitherdatatype.domain.entity.UserAccount
 import br.com.example.eitherdatatype.infrastructure.database.H2DatabaseConnection
-import br.com.example.eitherdatatype.infrastructure.database.exception.CannotCreateAccountException
-import br.com.example.eitherdatatype.inputboundary.CreateAccountInputBoundary
 import org.junit.jupiter.api.*
 import org.junit.jupiter.api.Assertions.*
 

@@ -2,7 +2,7 @@ package br.com.example.eitherdatatype.main.controller
 
 import br.com.example.eitherdatatype.infrastructure.adapter.ControllerAdapter
 import br.com.example.eitherdatatype.infrastructure.adapter.account.CreateAccountInputDTO
-import br.com.example.eitherdatatype.inputboundary.CreateAccountInputBoundary
+import br.com.example.eitherdatatype.inputdata.CreateAccountInputData
 import br.com.example.eitherdatatype.presentation.protocol.Controller
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.ResponseEntity
@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController
 
 @RestController
 @RequestMapping("/poc/v1/account")
-class AccountController(@Autowired val controller: Controller<CreateAccountInputBoundary>) {
+class AccountController(@Autowired val controller: Controller<CreateAccountInputData>) {
 
     @PostMapping
     fun createAccount(@RequestBody accountData: CreateAccountInputDTO): ResponseEntity<Any> {

@@ -1,7 +1,7 @@
 package br.com.example.eitherdatatype.main.factories
 
 import br.com.example.eitherdatatype.infrastructure.protocols.LoggerSystem
-import br.com.example.eitherdatatype.outputboundary.MessageError
+import br.com.example.eitherdatatype.outputdata.MessageError
 import br.com.example.eitherdatatype.presentation.protocol.Controller
 import br.com.example.eitherdatatype.presentation.protocol.HttpRequest
 import br.com.example.eitherdatatype.presentation.protocol.HttpResponse
