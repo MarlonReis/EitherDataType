@@ -61,7 +61,7 @@ internal class CreateAccountControllerTest {
         val createAccountStub = CreateAccountUseCaseStub()
         val sut = CreateAccountController(createAccountStub)
         val response = sut.handle(HttpRequest(body = data))
-        assertEquals(response.status, 200)
+        assertEquals(response.status, 201)
     }
 
     @Test
@@ -73,7 +73,7 @@ internal class CreateAccountControllerTest {
 
         val sut = CreateAccountController(createAccountStub)
         val response = sut.handle(HttpRequest(body = data))
-        assertEquals(response.status, 400)
+        assertEquals(response.status, 422)
     }
 
 

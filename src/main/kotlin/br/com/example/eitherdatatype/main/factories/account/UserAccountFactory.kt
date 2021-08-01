@@ -39,10 +39,7 @@ class UserAccountFactory {
 
     @Bean
     fun makeCreateAccountControllerFactory(usecase: CreateAccountUseCase): Controller<CreateAccountInputBoundary> {
-        return LoggerDecorator(
-            logger = Slf4jLogger.build(),
-            controller = CreateAccountController(usecase)
-        )
+        return LoggerDecorator(logger = Slf4jLogger.build(), controller = CreateAccountController(usecase))
     }
 
 

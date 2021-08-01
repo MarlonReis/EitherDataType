@@ -37,11 +37,6 @@ internal class EmailExistsH2RepositoryTest {
 
     @Test
     fun shouldReturnSuccessWithFalseWhenNotFoundRegister() {
-        val connection = databaseConnection.connection().getOrNull()!!
-        connection.createStatement()
-            .execute("CREATE TEMPORARY TABLE IF NOT EXISTS account(id IDENTITY NOT NULL PRIMARY KEY,nome VARCHAR, email VARCHAR)")
-        connection.createStatement().execute("INSERT INTO account(nome,email) values ('Any Name','valid@email.com')")
-
         val sut = EmailExistsH2Repository(databaseConnection)
         val response = sut.exist("any@email.com")
 
@@ -49,13 +44,6 @@ internal class EmailExistsH2RepositoryTest {
         assertFalse(response.getOrNull()!!)
     }
 
-    @Test
-    fun shouldReturnFailureWhenNotHaveAccountTable() {
-        val sut = EmailExistsH2Repository(databaseConnection)
-        val response = sut.exist("any@email.com")
-        assertTrue(response.isFailure)
-        assertTrue(response.exceptionOrNull() is CannotFoundAccountException)
-    }
 
     @Test
     fun shouldReturnFailureWhenNotHaveDatabaseConnection() {

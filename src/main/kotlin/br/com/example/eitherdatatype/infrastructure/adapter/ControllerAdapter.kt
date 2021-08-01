@@ -12,8 +12,15 @@ class ControllerAdapter<T> private constructor(private val controller: Controlle
 
     companion object {
         fun <T> command(controller: Controller<T>, data: InputBoundaryAdapter<T>): ResponseEntity<Any> {
-            val response = ControllerAdapter(controller).handle(HttpRequest(body = data.toInputBoundary()))
-            return ResponseEntity.status(response.status).body(response.body)
+            val responseData = data.toInputBoundary()
+            if (responseData.isSuccess) {
+                val response = ControllerAdapter(controller).handle(HttpRequest(body = responseData.getOrNull()))
+                return ResponseEntity.status(response.status).body(response.body)
+            }
+            val message: String = responseData.exceptionOrNull().let {
+                it?.message ?: ""
+            }
+            return ResponseEntity.status(400).body(MessageError.build(message))
         }
     }
 

@@ -3,6 +3,7 @@ package br.com.example.eitherdatatype.data.usecase
 import br.com.example.eitherdatatype.data.exceptions.EmailIsBeingUsedException
 import br.com.example.eitherdatatype.data.repository.CreateAccountRepository
 import br.com.example.eitherdatatype.data.repository.EmailExistsRepository
+import br.com.example.eitherdatatype.domain.entity.UserAccount
 import br.com.example.eitherdatatype.inputboundary.CreateAccountInputBoundary
 import br.com.example.eitherdatatype.shared.Either
 import io.mockk.every
@@ -75,7 +76,7 @@ internal class DbCreateAccountUseCaseTest {
 
 
     private class CreateAccountRepositoryStub : CreateAccountRepository {
-        override fun createAccount(account: CreateAccountInputBoundary): Either<Unit> {
+        override fun createAccount(account: UserAccount): Either<Unit> {
             return Either.success(Unit)
         }
     }

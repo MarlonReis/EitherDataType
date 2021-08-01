@@ -23,7 +23,7 @@ class CreateAccountController(private val usecase: CreateAccountUseCase) : Contr
         val response = usecase.createAccount(request.body)
 
         if (response.isSuccess) {
-            return HttpResponse(status = 200)
+            return HttpResponse(status = 201)
         }
 
         if (response.exceptionOrNull() is EmailIsBeingUsedException) {

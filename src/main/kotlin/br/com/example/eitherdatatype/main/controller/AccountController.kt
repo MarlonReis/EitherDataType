@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.RestController
 @RequestMapping("/poc/v1/account")
 class AccountController(@Autowired val controller: Controller<CreateAccountInputBoundary>) {
 
-
     @PostMapping
     fun createAccount(@RequestBody accountData: CreateAccountInputDTO): ResponseEntity<Any> {
         return ControllerAdapter.command(controller, accountData)

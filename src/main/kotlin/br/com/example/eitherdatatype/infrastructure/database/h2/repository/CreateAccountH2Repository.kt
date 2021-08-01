@@ -1,6 +1,7 @@
 package br.com.example.eitherdatatype.infrastructure.database.h2.repository
 
 import br.com.example.eitherdatatype.data.repository.CreateAccountRepository
+import br.com.example.eitherdatatype.domain.entity.UserAccount
 import br.com.example.eitherdatatype.infrastructure.database.ConnectionDatabase
 import br.com.example.eitherdatatype.infrastructure.database.exception.CannotCreateAccountException
 import br.com.example.eitherdatatype.inputboundary.CreateAccountInputBoundary
@@ -11,7 +12,7 @@ class CreateAccountH2Repository(
     private val connectionDatabase: ConnectionDatabase<Connection>
 ) : CreateAccountRepository {
 
-    override fun createAccount(account: CreateAccountInputBoundary): Either<Unit> {
+    override fun createAccount(account: UserAccount): Either<Unit> {
         val response = connectionDatabase.connection()
         if (response.isFailure) {
             return Either.failure(response.exceptionOrNull()!!)
@@ -22,7 +23,6 @@ class CreateAccountH2Repository(
             val statement = connection.createStatement()
             val executionResponse = statement.executeUpdate(
                 "INSERT INTO account(nome,email) values ('${account.name}','${account.email}')"
-
             )
 
             if (executionResponse == 1) {
