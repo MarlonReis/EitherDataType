@@ -2,7 +2,7 @@ package br.com.example.eitherdatatype.presentation.controller
 
 import br.com.example.eitherdatatype.data.exceptions.EmailIsBeingUsedException
 import br.com.example.eitherdatatype.domain.usecase.CreateAccountUseCase
-import br.com.example.eitherdatatype.inputdata.CreateAccountInputData
+import br.com.example.eitherdatatype.domain.data.input.CreateAccountInputData
 import br.com.example.eitherdatatype.presentation.protocol.HttpRequest
 import br.com.example.eitherdatatype.shared.Either
 import io.mockk.*

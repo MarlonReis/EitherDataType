@@ -1,4 +1,4 @@
-package br.com.example.eitherdatatype.outputdata
+package br.com.example.eitherdatatype.presentation.response
 
 class MessageError private constructor(
     val message: String,

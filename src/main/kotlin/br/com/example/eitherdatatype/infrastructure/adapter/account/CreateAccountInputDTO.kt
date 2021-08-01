@@ -2,7 +2,7 @@ package br.com.example.eitherdatatype.infrastructure.adapter.account
 
 import br.com.example.eitherdatatype.infrastructure.exception.RequiredFieldException
 import br.com.example.eitherdatatype.infrastructure.protocols.InputDataAdapter
-import br.com.example.eitherdatatype.inputdata.CreateAccountInputData
+import br.com.example.eitherdatatype.domain.data.input.CreateAccountInputData
 import br.com.example.eitherdatatype.shared.Either
 
 

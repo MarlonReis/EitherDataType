@@ -5,7 +5,7 @@ import br.com.example.eitherdatatype.data.repository.CreateAccountRepository
 import br.com.example.eitherdatatype.data.repository.EmailExistsRepository
 import br.com.example.eitherdatatype.domain.entity.UserAccount
 import br.com.example.eitherdatatype.domain.usecase.CreateAccountUseCase
-import br.com.example.eitherdatatype.inputdata.CreateAccountInputData
+import br.com.example.eitherdatatype.domain.data.input.CreateAccountInputData
 import br.com.example.eitherdatatype.shared.Either
 
 

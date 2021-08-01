@@ -8,7 +8,7 @@ import br.com.example.eitherdatatype.infrastructure.adapter.Slf4jLogger
 import br.com.example.eitherdatatype.infrastructure.database.ConnectionDatabase
 import br.com.example.eitherdatatype.infrastructure.database.h2.repository.CreateAccountH2Repository
 import br.com.example.eitherdatatype.infrastructure.database.h2.repository.EmailExistsH2Repository
-import br.com.example.eitherdatatype.inputdata.CreateAccountInputData
+import br.com.example.eitherdatatype.domain.data.input.CreateAccountInputData
 import br.com.example.eitherdatatype.main.factories.LoggerDecorator
 import br.com.example.eitherdatatype.presentation.controller.CreateAccountController
 import br.com.example.eitherdatatype.presentation.protocol.Controller

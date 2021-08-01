@@ -2,7 +2,7 @@ package br.com.example.eitherdatatype.main.controller
 
 import br.com.example.eitherdatatype.infrastructure.adapter.ControllerAdapter
 import br.com.example.eitherdatatype.infrastructure.adapter.account.CreateAccountInputDTO
-import br.com.example.eitherdatatype.inputdata.CreateAccountInputData
+import br.com.example.eitherdatatype.domain.data.input.CreateAccountInputData
 import br.com.example.eitherdatatype.presentation.protocol.Controller
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.ResponseEntity
