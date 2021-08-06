@@ -1,6 +1,6 @@
 package br.com.example.eitherdatatype.infrastructure.database
 
-import br.com.example.eitherdatatype.infrastructure.exception.CannotConnectWithDatabase
+import br.com.example.eitherdatatype.infrastructure.exception.CannotConnectWithDatabaseException
 import br.com.example.eitherdatatype.shared.Either
 import java.sql.Connection
 import java.sql.DriverManager
@@ -10,7 +10,7 @@ class H2DatabaseConnection(
     private val user: String,
     private val password: String
 ) : ConnectionDatabase<Connection> {
-    private var connectionDatabase: Either<Connection> = Either.failure(CannotConnectWithDatabase())
+    private var connectionDatabase: Either<Connection> = Either.failure(CannotConnectWithDatabaseException())
 
     init {
         Class.forName("org.h2.Driver");
@@ -27,7 +27,7 @@ class H2DatabaseConnection(
         } catch (e: Exception) {
             return Either.failure(e)
         }
-        return Either.failure(CannotConnectWithDatabase())
+        return Either.failure(CannotConnectWithDatabaseException())
     }
 
     private fun createTable() {
@@ -45,7 +45,8 @@ class H2DatabaseConnection(
             if (!response.isClosed) {
                 response.close()
             }
-            connectionDatabase = Either.failure(CannotConnectWithDatabase())
+            connectionDatabase = Either.failure(CannotConnectWithDatabaseException())
         }
     }
+
 }
