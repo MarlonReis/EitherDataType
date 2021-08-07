@@ -28,11 +28,16 @@ dependencies {
     implementation("com.google.code.gson:gson:2.8.7")
     implementation("com.h2database:h2:1.3.148")
     implementation("javax.validation:validation-api")
+    implementation("org.springframework.kafka:spring-kafka")
 
     testImplementation("com.ninja-squad:springmockk:3.0.1")
     testImplementation("org.hamcrest:hamcrest-all:1.3")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     testImplementation("org.jetbrains.kotlin:kotlin-test")
+
+    testImplementation("org.springframework.kafka:spring-kafka-test")
+//    testImplementation("org.testcontainers:kafka")
+
 }
 
 tasks.withType<KotlinCompile> {
