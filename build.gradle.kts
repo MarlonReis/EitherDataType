@@ -16,6 +16,8 @@ group = "br.com.example"
 version = "0.0.1-SNAPSHOT"
 java.sourceCompatibility = JavaVersion.VERSION_11
 
+extra["springCloudVersion"] = "2020.0.3"
+
 repositories {
     mavenCentral()
 }
@@ -28,7 +30,12 @@ dependencies {
     implementation("com.google.code.gson:gson:2.8.7")
     implementation("com.h2database:h2:1.3.148")
     implementation("javax.validation:validation-api")
+
+    implementation("org.springframework.cloud:spring-cloud-stream")
+    implementation("org.springframework.cloud:spring-cloud-stream-binder-kafka")
     implementation("org.springframework.kafka:spring-kafka")
+    implementation("junit:junit:4.13.1")
+    implementation("junit:junit:4.13.1")
 
     testImplementation("com.ninja-squad:springmockk:3.0.1")
     testImplementation("org.hamcrest:hamcrest-all:1.3")
@@ -36,8 +43,14 @@ dependencies {
     testImplementation("org.jetbrains.kotlin:kotlin-test")
 
     testImplementation("org.springframework.kafka:spring-kafka-test")
-//    testImplementation("org.testcontainers:kafka")
 
+
+}
+
+dependencyManagement {
+    imports {
+        mavenBom("org.springframework.cloud:spring-cloud-dependencies:${property("springCloudVersion")}")
+    }
 }
 
 tasks.withType<KotlinCompile> {
